@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary-teal: #0B6F73;
+  --color-dark-navy: #102A2E;
+  --color-teal-accent: #19A6A6;
+  --color-light-teal: #79D8D5;
+  --color-soft-teal: #DDF4F2;
+  --color-warm-bg: #F8FAF9;
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #102A2E;
+    background-color: #F8FAF9;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Responsive Container Utility (Max 1400px width) */
+.custom-container {
+  width: min(100% - 40px, 1400px);
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .custom-container {
+    width: min(100% - 24px, 1400px);
+  }
+}
+
+/* ========================================================= */
+/* HERO SECTION CORE LAYOUT & RESPONSIVE CONTAINMENT STYLES  */
+/* ========================================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 660px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #657476;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-background img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: var(--desktop-x, 72%) var(--desktop-y, 30%);
+  transform: scale(var(--desktop-zoom, 1));
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+@media (min-width: 1440px) {
+  .hero-background img {
+    object-position: var(--desktop-x-override, var(--desktop-x, 72%)) var(--desktop-y-override, var(--desktop-y, 30%));
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .hero-background img {
+    object-position: var(--desktop-x-override, var(--desktop-x, 74%)) var(--desktop-y-override, var(--desktop-y, 30%));
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-background img {
+    object-position: var(--desktop-x-override, var(--desktop-x, 77%)) var(--desktop-y-override, var(--desktop-y, 28%));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-background img {
+    object-position: var(--desktop-x-override, var(--desktop-x, 75%)) var(--desktop-y-override, var(--desktop-y, 25%));
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 27, 32, 0.94) 0%,
+    rgba(4, 27, 32, 0.86) 22%,
+    rgba(4, 27, 32, 0.66) 40%,
+    rgba(4, 27, 32, 0.32) 54%,
+    rgba(4, 27, 32, 0.08) 72%,
+    rgba(4, 27, 32, 0.02) 100%
+  );
+}
+
+.hero-container {
+  width: min(100% - 48px, 1440px);
+  margin-inline: auto;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 590px);
+}
+
+.mobile-hero-image {
+  position: relative;
+  width: 100%;
+  height: clamp(300px, 78vw, 430px);
+  overflow: hidden;
+}
+
+.mobile-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--mobile-x, 50%) var(--mobile-y, 18%);
+  transform: scale(var(--mobile-zoom, 1));
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0B6F73;
+}
+
