@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { BlogPost } from '../types';
+import livasaHospital from '../assets/images/livasa_hospital_suite_1789018639103.jpg';
 import {
   BookOpen,
   Search,
@@ -115,9 +116,10 @@ export const BlogSection: React.FC = () => {
                   {/* Article Thumbnail */}
                   <div className="aspect-[16/9] bg-slate-100 overflow-hidden relative">
                     <img
-                      src={blog.featuredImage || "/src/assets/images/clinic_suite_interior_1789018639524.jpg"}
+                      src={blog.featuredImage || livasaHospital}
                       alt={blog.title}
                       referrerPolicy="no-referrer"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = livasaHospital; }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-0.5 rounded-md text-[10px] font-bold text-teal-800 shadow-xs">
@@ -198,6 +200,7 @@ export const BlogSection: React.FC = () => {
                     src={readingArticle.featuredImage}
                     alt={readingArticle.title}
                     referrerPolicy="no-referrer"
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = livasaHospital; }}
                     className="w-full h-full object-cover"
                   />
                 </div>
