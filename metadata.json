@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Kritarth – Consultant Pulmonologist & Sleep Medicine",
+  "description": "Official website of Dr. Kritarth, Consultant in Pulmonary Medicine, Respiratory Medicine, Sleep Medicine & Critical Care at Livasa Hospital Mohali.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
