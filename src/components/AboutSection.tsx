@@ -166,6 +166,7 @@ export const AboutSection: React.FC = () => {
                   src={doctorImage}
                   alt={`${doctorName} – ${doctorDesignation}`}
                   referrerPolicy="no-referrer"
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = doctorKritarthClinicHero; }}
                   className="w-full h-full object-cover object-top filter brightness-[1.01] contrast-[1.02]"
                 />
 

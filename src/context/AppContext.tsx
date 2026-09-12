@@ -17,6 +17,8 @@ import {
   initialMedia
 } from '../data/defaultData';
 import doctorKritarthClinicHero from '../assets/images/doctor_kritarth_clinic_hero.webp';
+import translucentLungs from '../assets/images/translucent_3d_lungs_1789018628489.jpg';
+import livasaHospital from '../assets/images/livasa_hospital_suite_1789018639103.jpg';
 
 // Hero image fields that need to always resolve to the correct bundled image
 // if no valid admin-uploaded URL exists.
@@ -28,29 +30,42 @@ const HERO_IMAGE_FIELDS = [
 ] as const;
 
 /**
- * Returns true if the given hero image value should be ignored and replaced
- * with the bundled portrait.
+ * Returns true if the given image value should be replaced with a bundled fallback.
  *
  * Invalid values:
  *   - falsy / empty string
  *   - /src/assets/... paths — these are Vite dev-mode source paths that
  *     DO NOT exist as stable URLs in production builds. They look correct
  *     in dev but break after a Vite build where assets get hashed.
- *   - /uploads/ paths that point to a now-deleted old image
+ *   - /uploads/ paths that point to a now-deleted ephemeral upload
  */
-function isStaleHeroUrl(val: unknown): boolean {
+function isStaleImageUrl(val: unknown): boolean {
   if (!val || typeof val !== 'string' || val.trim() === '') return true;
   if (val.startsWith('/src/assets/')) return true;
   if (val.startsWith('/uploads/')) return true;
   return false;
 }
 
+// Keep isStaleHeroUrl as an alias for backwards compatibility
+const isStaleHeroUrl = isStaleImageUrl;
+void isStaleHeroUrl; // suppress unused warning
+
 /** Strip stale hero URLs from a settings object, replacing with the bundled portrait. */
 function sanitizeHeroFields(obj: Record<string, unknown>): void {
   for (const field of HERO_IMAGE_FIELDS) {
-    if (isStaleHeroUrl(obj[field])) {
+    if (isStaleImageUrl(obj[field])) {
       obj[field] = doctorKritarthClinicHero;
     }
+  }
+  // Also sanitize the non-hero image fields
+  if (isStaleImageUrl(obj['aboutDoctorImage'])) {
+    obj['aboutDoctorImage'] = doctorKritarthClinicHero;
+  }
+  if (isStaleImageUrl(obj['lungsVisualImage'])) {
+    obj['lungsVisualImage'] = translucentLungs;
+  }
+  if (isStaleImageUrl(obj['clinicSuiteImage'])) {
+    obj['clinicSuiteImage'] = livasaHospital;
   }
 }
 
@@ -122,6 +137,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             }
             if (parsed.whatsappNumber && parsed.whatsappNumber.includes('98765')) {
               parsed.whatsappNumber = "+917986148502";
+            }
+            // MIGRATION: if any cached setting still has a /src/assets/ path,
+            // the whole cache is stale — clear it so production images always
+            // come from the properly-bundled Vite imports.
+            const hasStaleAssetPath = Object.values(parsed).some(
+              (v) => typeof v === 'string' && (v.startsWith('/src/assets/') || v.startsWith('/uploads/'))
+            );
+            if (hasStaleAssetPath) {
+              localStorage.removeItem('drk_website_settings');
+              return initialSettings;
             }
             const merged = { ...initialSettings, ...parsed } as Record<string, unknown>;
             sanitizeHeroFields(merged);

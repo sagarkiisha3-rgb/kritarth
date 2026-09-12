@@ -1,5 +1,11 @@
 import { WebsiteSettings, ConditionService, BlogPost, Testimonial, DoctorVideo, MediaItem, LungHotspot } from '../types';
 import doctorKritarthClinicHero from '../assets/images/doctor_kritarth_clinic_hero.webp';
+import translucentLungs from '../assets/images/translucent_3d_lungs_1789018628489.jpg';
+import livasaHospital from '../assets/images/livasa_hospital_suite_1789018639103.jpg';
+import asthmaInhaler from '../assets/images/asthma_inhaler_1789205198268.jpg';
+import airPollutionLung from '../assets/images/air_pollution_lung_1789205210529.jpg';
+import sleepApneaMonitoring from '../assets/images/sleep_apnea_monitoring_1789205226727.jpg';
+import bronchoscopyProcedure from '../assets/images/bronchoscopy_procedure_1789205239614.jpg';
 
 export const initialSettings: WebsiteSettings = {
   doctorName: "Dr. Kritarth",
@@ -28,8 +34,8 @@ export const initialSettings: WebsiteSettings = {
   heroOverlayDirection: "left-to-right",
   heroImageAlt: "Dr. Kritarth – Consultant Pulmonologist & Sleep Specialist",
   aboutDoctorImage: doctorKritarthClinicHero,
-  lungsVisualImage: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
-  clinicSuiteImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+  lungsVisualImage: translucentLungs,
+  clinicSuiteImage: livasaHospital,
   phonePrimary: "+91 7986148502",
   phoneEmergency: "+91 172 5000000",
   whatsappNumber: "+917986148502",
@@ -198,7 +204,7 @@ export const initialServices: ConditionService[] = [
     slug: "asthma",
     category: "condition",
     iconName: "Wind",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Personalized management plans for allergic and non-allergic bronchial asthma, severe refractory asthma, and exercise-induced airway constriction.",
     detailedOverview: "Asthma is a chronic inflammatory disorder of the airways characterized by variable and recurring symptoms, airflow obstruction, bronchial hyper-responsiveness, and underlying inflammation. With systematic medical assessment and personalized inhaler optimization, the majority of patients can attain symptom-free daily living and normal physical activities.",
     commonSymptoms: [
@@ -254,7 +260,7 @@ export const initialServices: ConditionService[] = [
     slug: "copd",
     category: "condition",
     iconName: "Activity",
-    featuredImage: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
+    featuredImage: translucentLungs,
     shortDescription: "Structured diagnostic evaluation, pulmonary rehabilitation guidance, and triple-therapy management for Chronic Obstructive Pulmonary Disease.",
     detailedOverview: "Chronic Obstructive Pulmonary Disease (COPD) is a progressive lung condition characterized by persistent respiratory symptoms and airflow limitation due to airway and alveolar abnormalities. It primarily encompasses chronic bronchitis and emphysema, frequently linked to long-term exposure to noxious gases or biomass smoke.",
     commonSymptoms: [
@@ -304,7 +310,7 @@ export const initialServices: ConditionService[] = [
     slug: "interstitial-lung-disease",
     category: "condition",
     iconName: "Layers",
-    featuredImage: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
+    featuredImage: translucentLungs,
     shortDescription: "Accurate diagnosis and antifibrotic therapies for pulmonary fibrosis, hypersensitivity pneumonitis, sarcoidosis, and autoimmune lung involvement.",
     detailedOverview: "Interstitial Lung Diseases (ILD) comprise a broad group of over 200 conditions that cause progressive inflammation and scarring (fibrosis) of the interstitium—the delicate tissue surrounding your lungs' air sacs. Early expert evaluation is vital to distinguish treatable inflammatory ILDs from progressive fibrosing disorders.",
     commonSymptoms: [
@@ -354,7 +360,7 @@ export const initialServices: ConditionService[] = [
     slug: "bronchiectasis",
     category: "condition",
     iconName: "ShieldAlert",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Specialized sputum clearance protocols, targeted antimicrobial therapy, and long-term airway preservation for dilated bronchial airways.",
     detailedOverview: "Bronchiectasis is a chronic condition where the bronchi become abnormally widened, scarred, and unable to clear mucus naturally. This creates a cycle of mucus pooling, bacterial colonization, recurrent infections, and progressive airway destruction.",
     commonSymptoms: [
@@ -404,7 +410,7 @@ export const initialServices: ConditionService[] = [
     slug: "pulmonary-infections",
     category: "condition",
     iconName: "Thermometer",
-    featuredImage: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
+    featuredImage: translucentLungs,
     shortDescription: "Accurate microbiological identification and inpatient/outpatient management of community-acquired pneumonia, fungal infections, and post-viral complications.",
     detailedOverview: "Respiratory infections range from self-limiting acute bronchitis to severe bacterial or fungal pneumonia that can compromise gas exchange. Prompt microbiological identification prevents antibiotic misuse and reduces risk of pleural effusion or sepsis.",
     commonSymptoms: [
@@ -454,7 +460,7 @@ export const initialServices: ConditionService[] = [
     slug: "tuberculosis",
     category: "condition",
     iconName: "AlertTriangle",
-    featuredImage: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
+    featuredImage: translucentLungs,
     shortDescription: "Evidence-based management of pulmonary tuberculosis, extrapulmonary TB, and complex drug-resistant (MDR/XDR-TB) regimens with therapeutic monitoring.",
     detailedOverview: "Tuberculosis (TB) is a bacterial infection caused by Mycobacterium tuberculosis, primarily affecting the lungs. In India, timely diagnosis through modern molecular platforms (CBNAAT/GeneXpert) allows cure while preventing transmission and drug resistance.",
     commonSymptoms: [
@@ -505,7 +511,7 @@ export const initialServices: ConditionService[] = [
     slug: "pleural-disease",
     category: "condition",
     iconName: "Shield",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Ultrasound-guided diagnostic and therapeutic thoracentesis, chest tube insertion, and medical thoracoscopy for pleural fluid and air leaks.",
     detailedOverview: "The pleural space is the thin area between the chest wall and the lungs. Accumulation of fluid (pleural effusion), infected pus (empyema), or trapped air (pneumothorax) compresses the lung, leading to sharp breathing pain and severe dyspnea.",
     commonSymptoms: [
@@ -555,7 +561,7 @@ export const initialServices: ConditionService[] = [
     slug: "sleep-apnea",
     category: "sleep",
     iconName: "Moon",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Level 1 In-Lab Polysomnography, Home Sleep Apnea Testing (HSAT), and CPAP/BiPAP precision titration for restorative, healthy sleep.",
     detailedOverview: "Obstructive Sleep Apnea (OSA) is a sleep-related breathing disorder where the upper airway repeatedly collapses during sleep, resulting in oxygen drops and micro-arousals. If left untreated, OSA significantly increases the risk of high blood pressure, stroke, heart failure, and vehicular accidents.",
     commonSymptoms: [
@@ -611,7 +617,7 @@ export const initialServices: ConditionService[] = [
     slug: "bronchoscopy",
     category: "interventional",
     iconName: "Stethoscope",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Advanced direct airway visualization, transbronchial lung biopsy, therapeutic mucus plug clearance, and foreign body removal.",
     detailedOverview: "Bronchoscopy is a minimally invasive endoscopic procedure allowing direct visualization of the tracheobronchial tree using a flexible fiberoptic scope equipped with a high-definition digital camera. It provides definitive diagnostic tissue sampling and life-saving therapeutic interventions.",
     commonSymptoms: [
@@ -660,7 +666,7 @@ export const initialServices: ConditionService[] = [
     slug: "ebus",
     category: "interventional",
     iconName: "Search",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Minimally invasive ultrasound-guided biopsy of mediastinal and hilar lymph nodes without requiring surgical incisions.",
     detailedOverview: "Endobronchial Ultrasound (EBUS) is a sophisticated interventional pulmonology technique combining flexible bronchoscopy with miniature high-frequency ultrasound. It enables direct real-time visualization through the airway wall to safely biopsy deep mediastinal and hilar lymph nodes, replacing open surgical mediastinoscopy.",
     commonSymptoms: [
@@ -708,7 +714,7 @@ export const initialServices: ConditionService[] = [
     slug: "thoracoscopy",
     category: "interventional",
     iconName: "Eye",
-    featuredImage: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    featuredImage: livasaHospital,
     shortDescription: "Direct inspection of the pleural cavity under local anesthesia for undiagnosed pleural effusions and targeted biopsy.",
     detailedOverview: "Medical Thoracoscopy (also known as Pleuroscopy) is an interventional technique carried out by pulmonologists in an endoscopy suite under local anesthesia with conscious sedation. Through a single small entry port, the entire pleural space can be visualized, fluid drained, and biopsies obtained from abnormal parietal pleural surfaces.",
     commonSymptoms: [
@@ -788,7 +794,7 @@ When patients feel better, they often stop their controller inhalers without doc
 - Using a spacer device significantly improves drug deposition into the lungs.
 - Always review your inhaler technique at least once every 6 months with your pulmonologist.
     `,
-    featuredImage: "/src/assets/images/asthma_inhaler_1789205198268.jpg",
+    featuredImage: asthmaInhaler,
     date: "August 24, 2026",
     author: "Dr. Kritarth",
     tags: ["Asthma", "Inhalers", "Patient Education", "Pulmonology"],
@@ -821,7 +827,7 @@ Fine particulate matter smaller than 2.5 microns (PM2.5) is dangerous because it
 3. **Pre-Winter Pulmonology Review**: Patients with asthma or COPD should visit their pulmonologist in October or November to step up baseline controller anti-inflammatory doses before severe smog spikes.
 4. **Indoor Air Management**: Keep windows closed during peak haze hours. Clean air conditioning filters and consider HEPA air purifiers in bedrooms of vulnerable patients.
     `,
-    featuredImage: "/src/assets/images/air_pollution_lung_1789205210529.jpg",
+    featuredImage: airPollutionLung,
     date: "September 02, 2026",
     author: "Dr. Kritarth",
     tags: ["Air Pollution", "PM2.5", "Mohali", "COPD", "Asthma"],
@@ -860,7 +866,7 @@ Because the heart and blood vessels are subjected to recurrent nocturnal hypoxia
 
 A painless overnight diagnostic sleep test (**Polysomnography**) measures your brain waves, airflow, chest movement, and oxygen levels throughout the night. If moderate to severe apnea is confirmed, **Continuous Positive Airway Pressure (CPAP)** acts as an invisible pneumatic splint, keeping your airway open and restoring restful sleep from the very first night.
     `,
-    featuredImage: "/src/assets/images/sleep_apnea_monitoring_1789205226727.jpg",
+    featuredImage: sleepApneaMonitoring,
     date: "September 06, 2026",
     author: "Dr. Kritarth",
     tags: ["Sleep Medicine", "Snoring", "Sleep Apnea", "Hypertension"],
@@ -895,7 +901,7 @@ Being advised to undergo a "bronchoscopy" can sound intimidating to patients. Kn
 ### Recovery
 You will rest in the daycare observation bay for 1 to 2 hours until the throat numbness wears off. Most patients go home the same day and resume light meals within a couple of hours.
     `,
-    featuredImage: "/src/assets/images/bronchoscopy_procedure_1789205239614.jpg",
+    featuredImage: bronchoscopyProcedure,
     date: "September 08, 2026",
     author: "Dr. Kritarth",
     tags: ["Bronchoscopy", "Interventional Pulmonology", "Procedures"],
@@ -945,7 +951,7 @@ export const initialVideos: DoctorVideo[] = [
     id: "vid-1",
     title: "How to Use a Dry Powder Inhaler (DPI) Correctly",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    thumbnail: livasaHospital,
     category: "Inhaler Technique",
     duration: "4:15"
   },
@@ -953,7 +959,7 @@ export const initialVideos: DoctorVideo[] = [
     id: "vid-2",
     title: "Recognizing Early Warning Signs of Asthma Attack in Children & Adults",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
+    thumbnail: translucentLungs,
     category: "Asthma Alert",
     duration: "5:30"
   },
@@ -982,7 +988,7 @@ export const initialMedia: MediaItem[] = [
   {
     id: "media-2",
     filename: "translucent_3d_lungs.jpg",
-    url: "/src/assets/images/translucent_3d_lungs_1789018628489.jpg",
+    url: translucentLungs,
     category: "Hero Images",
     altText: "Medical 3D Translucent Lung Anatomy Visualization",
     caption: "Detailed anatomical rendering of the bronchial tree and alveolar oxygenation",
@@ -993,7 +999,7 @@ export const initialMedia: MediaItem[] = [
   {
     id: "media-3",
     filename: "livasa_hospital_suite.jpg",
-    url: "/src/assets/images/livasa_hospital_suite_1789018639103.jpg",
+    url: livasaHospital,
     category: "Hospital",
     altText: "Pulmonary Outpatient Suite and Respiratory Workstation at Livasa Hospital",
     caption: "Modern respiratory consultation facility at Livasa Hospital Mohali",
